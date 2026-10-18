@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" fill="none" role="img" aria-label="Refyn Venture Primary Lockup (Light)">
+  <title>REFYN VENTURE — Software that moves business forward.</title>
+  <g transform="translate(8, 12)">
+    <path
+      d="M12 16H60C74.3594 16 85 25.8497 85 38.5C85 48.6214 78.1872 56.8857 67.8 59.8L88 80H69.5L35.5 46H57.5C63.8513 46 68.5 42.1944 68.5 37.5C68.5 32.8056 63.8513 29 57.5 29H25L12 16Z"
+      fill="#0F172A"
+    />
+    <path d="M14 55H31.5L56.5 80H39L14 55Z" fill="#0F172A" />
+  </g>
+  <line x1="126" y1="18" x2="126" y2="102" stroke="#64748B" stroke-width="1" stroke-opacity="0.45" />
+  <text x="154" y="54" fill="#111318" font-family="'General Sans', 'Neue Montreal', -apple-system, sans-serif" font-size="38" font-weight="600" letter-spacing="6">REFYN</text>
+  <text x="156" y="82" fill="#64748B" font-family="'General Sans', 'Neue Montreal', -apple-system, sans-serif" font-size="16" font-weight="500" letter-spacing="9">VENTURE</text>
+  <text x="156" y="105" fill="#64748B" font-family="'General Sans', 'Neue Montreal', -apple-system, sans-serif" font-size="12" font-weight="400" letter-spacing="0.4">Software that moves business forward.</text>
+</svg>
