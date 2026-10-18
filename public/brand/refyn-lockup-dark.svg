@@ -1,15 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" fill="none" role="img" aria-label="Refyn Venture Primary Lockup (Dark)">
-  <title>REFYN VENTURE — Software that moves business forward.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" fill="none" role="img" aria-label="Refyn Venture Lockup (Dark Background)">
+  <title>Refyn Venture Lockup — Dark</title>
   <rect width="540" height="120" fill="#0F172A" />
-  <g transform="translate(8, 12)">
+  <g transform="translate(24, 12)">
     <path
-      d="M12 16H60C74.3594 16 85 25.8497 85 38.5C85 48.6214 78.1872 56.8857 67.8 59.8L88 80H69.5L35.5 46H57.5C63.8513 46 68.5 42.1944 68.5 37.5C68.5 32.8056 63.8513 29 57.5 29H25L12 16Z"
+      d="M8 14H64.5C75.8 14 84.8 23 84.8 34.3C84.8 44.3 77.5 52.6 67.8 54.1L63.5 54.8L88 82.6H69.2L31.6 41H64.2C67.9 41 71 38 71 34.3C71 30.6 67.9 27.6 64.2 27.6H21.2L8 14Z"
       fill="#F7F7F4"
     />
-    <path d="M14 55H31.5L56.5 80H39L14 55Z" fill="#F7F7F4" />
+    <path
+      d="M10 55.2H22.2C24.8 55.2 27.3 56.3 29 58.2L51.2 82.6H34L10 55.2Z"
+      fill="#F7F7F4"
+    />
   </g>
-  <line x1="126" y1="18" x2="126" y2="102" stroke="#64748B" stroke-width="1" stroke-opacity="0.55" />
-  <text x="154" y="54" fill="#F7F7F4" font-family="'General Sans', 'Neue Montreal', -apple-system, sans-serif" font-size="38" font-weight="600" letter-spacing="6">REFYN</text>
-  <text x="156" y="82" fill="#94A3B8" font-family="'General Sans', 'Neue Montreal', -apple-system, sans-serif" font-size="16" font-weight="500" letter-spacing="9">VENTURE</text>
-  <text x="156" y="105" fill="#94A3B8" font-family="'General Sans', 'Neue Montreal', -apple-system, sans-serif" font-size="12" font-weight="400" letter-spacing="0.4">Software that moves business forward.</text>
+  <line x1="142" y1="22" x2="142" y2="98" stroke="#64748B" stroke-opacity="0.55" stroke-width="1.25" />
+  <text
+    x="168"
+    y="59"
+    fill="#F7F7F4"
+    font-family="'General Sans', 'Neue Montreal', -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="40"
+    font-weight="600"
+    letter-spacing="11"
+  >REFYN</text>
+  <text
+    x="169"
+    y="88"
+    fill="#94A3B8"
+    font-family="'General Sans', 'Neue Montreal', -apple-system, BlinkMacSystemFont, sans-serif"
+    font-size="16"
+    font-weight="500"
+    letter-spacing="10.5"
+  >VENTURE</text>
 </svg>
