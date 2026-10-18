@@ -29,6 +29,7 @@ describe("Task 3: Refyn Venture Flagship Monograph Page & Anti-Slop Compliance",
     const text = container.textContent ?? "";
     const emojiRegex = /[\p{Extended_Pictographic}]/u;
     expect(emojiRegex.test(text)).toBe(false);
+    expect(text.includes("//")).toBe(false);
   });
 
   it("renders downloadable SVG brand asset links and color token swatches in the Colophon", () => {

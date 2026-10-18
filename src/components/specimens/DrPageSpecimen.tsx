@@ -21,7 +21,7 @@ export function DrPageSpecimen() {
     >
       {/* Specimen Top Bar */}
       <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-[#E5E7EB] bg-[#F7F7F4] font-mono text-[11px] uppercase tracking-wider text-[#64748B]">
-        <span>SPECIMEN 01 // DR.PAGE LIVE CHAMBER GATEWAY</span>
+        <span>SPECIMEN 01 — DR.PAGE LIVE CHAMBER GATEWAY</span>
         <span className="text-[#0F172A] font-medium tabular-nums">
           LOCK: SELECT ... FOR UPDATE (0% DUPLICATE)
         </span>

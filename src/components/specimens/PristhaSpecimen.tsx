@@ -16,7 +16,7 @@ export function PristhaSpecimen() {
     >
       {/* Top Specimen Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-[#E5E7EB] bg-[#F7F7F4] font-mono text-[11px] uppercase tracking-wider text-[#64748B]">
-        <span>SPECIMEN 02 // PRISTHA TRI-SURFACE WORKSPACE</span>
+        <span>SPECIMEN 02 — PRISTHA TRI-SURFACE WORKSPACE</span>
         <span className="text-[#0F172A] font-medium">BILINGUAL · বাংলা / EN</span>
       </div>
 

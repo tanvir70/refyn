@@ -16,7 +16,7 @@ export function AgroPosSpecimen() {
     >
       {/* Top Specimen Bar */}
       <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-[#E5E7EB] bg-[#F7F7F4] font-mono text-[11px] uppercase tracking-wider text-[#64748B]">
-        <span>SPECIMEN 03 // AGROCHEMICAL POS & FEFO LEDGER</span>
+        <span>SPECIMEN 03 — AGROCHEMICAL POS & FEFO LEDGER</span>
         <span className="text-[#0F172A] font-medium tabular-nums">
           INVARIANT: CURRENT_DUE &gt;= 0.00 (CHECK ENFORCED)
         </span>
