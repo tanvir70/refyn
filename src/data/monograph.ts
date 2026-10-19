@@ -92,8 +92,8 @@ export const MONOGRAPH_WORKS: readonly MonographWork[] = [
     id: "agro-pos",
     index: "03",
     track: "PARTNER ENGINEERED SYSTEM",
-    title: "Rajib Enterprise POS",
-    nativeTitle: "মেসার্স রাজীব এন্টারপ্রাইজ",
+    title: "POS",
+    nativeTitle: "পিওএস (POS)",
     subtitle: "Agrochemical POS, FEFO Inventory & Self-Healing Credit Ledger",
     summary:
       "An audit-compliant retail counter, statutory chemical expiry engine, and double-entry credit ledger engineered for rural agrochemical dealerships.",
@@ -102,7 +102,7 @@ export const MONOGRAPH_WORKS: readonly MonographWork[] = [
     repositoryUrl: "https://github.com/tanvir70/pos",
     repositoryLabel: "github.com/tanvir70/pos",
     ledger: [
-      { label: "Classification", value: "Partner System · M/S Rajib Enterprise (Sherpur Sadar)" },
+      { label: "Classification", value: "Partner System · Agrochemical POS & Warehouse Core" },
       { label: "Core Modules", value: "FEFO Batch Counter · Dokan/Godown Split Dispatch · Quarantine Returns" },
       { label: "Runtime & Stack", value: "Python 3.12 FastAPI · React 19 · SQLite WAL (BEGIN IMMEDIATE) · Spring Boot Ref" },
       { label: "Domain Invariant", value: "Non-negative dues (current_due >= 0.00) · Self-healing ledger audit · 85/85 tests" },

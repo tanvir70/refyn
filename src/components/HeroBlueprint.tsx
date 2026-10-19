@@ -177,10 +177,10 @@ export function HeroBlueprint() {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-semibold text-white">
-                    Rajib Enterprise POS
+                    POS
                   </span>
                   <span className="font-bengali text-xs text-blue-300">
-                    রাজীব এন্টারপ্রাইজ
+                    পিওএস (POS)
                   </span>
                 </div>
                 <span className="block text-xs text-slate-400">

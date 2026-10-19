@@ -91,8 +91,8 @@ const STAGE_SLIDES: StageSlide[] = [
   {
     id: "agro-pos",
     index: "03",
-    title: "Rajib Enterprise POS",
-    nativeTitle: "মেসার্স রাজীব এন্টারপ্রাইজ",
+    title: "POS",
+    nativeTitle: "পিওএস (POS)",
     track: "Partner Engineered System",
     headline: "Multi-warehouse agrochemical POS, FEFO expiry & self-healing ledger",
     description:

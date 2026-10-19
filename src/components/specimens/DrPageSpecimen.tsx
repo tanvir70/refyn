@@ -22,35 +22,26 @@ export function DrPageSpecimen() {
 
   return (
     <div
-      className="relative rounded-3xl border border-emerald-500/30 bg-gradient-to-b from-[#081C24]/95 via-[#06121A]/95 to-[#040B11] text-slate-100 shadow-[0_36px_100px_-20px_rgba(16,185,129,0.28)] overflow-hidden backdrop-blur-2xl"
+      className="relative rounded-3xl border border-white/10 bg-[#121317] text-[#F8F9FC] shadow-[0_24px_70px_rgba(18,19,23,0.18)] overflow-hidden"
       aria-label="Dr.Page Interactive Chamber Queue Specimen"
     >
-      {/* Ambient Bioluminescent Emerald Glow */}
-      <div
-        className="pointer-events-none absolute -top-28 left-1/4 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-28 right-1/4 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl"
-        aria-hidden="true"
-      />
-
-      {/* Top Glass Window Chrome */}
-      <div className="relative flex flex-wrap items-center justify-between gap-3 px-6 py-4 border-b border-emerald-500/20 bg-emerald-950/30 font-mono text-[11px] uppercase tracking-[0.14em]">
+      {/* Top Window Bar */}
+      <div className="relative flex flex-wrap items-center justify-between gap-3 px-6 py-4 border-b border-white/10 bg-[#18191D]">
         <div className="flex items-center gap-3">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
-          </span>
-          <span className="text-emerald-300 font-semibold">
-            SPECIMEN 01 — DR.PAGE LIVE CHAMBER GATEWAY
+          <div className="flex items-center gap-1.5" aria-hidden="true">
+            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+          </div>
+          <span className="font-mono text-xs text-[#B2BBC5] tracking-wide">
+            refyn · runtime · dr-page
           </span>
         </div>
-        <div className="flex items-center gap-3 tabular-nums">
-          <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/25 text-emerald-300 text-[10px]">
+        <div className="flex items-center gap-3 tabular-nums font-mono text-[10px]">
+          <span className="px-2.5 py-1 rounded-full bg-white/[0.06] border border-white/10 text-[#93C5FD]">
             LOCK: SELECT ... FOR UPDATE (0% DUPLICATE)
           </span>
-          <span className="hidden sm:inline text-cyan-300 font-medium text-[10px]">
+          <span className="hidden sm:inline text-[#E6EAF0] opacity-80">
             SSE STREAM: CONNECTED
           </span>
         </div>
@@ -60,10 +51,10 @@ export function DrPageSpecimen() {
       <div
         className={`relative px-6 py-3 border-b font-mono text-xs uppercase tracking-[0.14em] flex items-center justify-between transition-colors ${
           state.isServingPatient
-            ? "bg-emerald-500 text-slate-950 font-bold border-emerald-400"
+            ? "bg-white text-[#121317] font-bold border-white"
             : state.delayMinutes > 0
-            ? "bg-amber-500/15 text-amber-300 border-amber-500/30"
-            : "bg-white/[0.02] text-emerald-200/90 border-white/[0.07]"
+            ? "bg-[#18191D] text-[#FBBF24] border-white/10"
+            : "bg-[#18191D] text-[#E6EAF0] border-white/10"
         }`}
       >
         <span>{state.statusBanner}</span>
@@ -71,40 +62,37 @@ export function DrPageSpecimen() {
       </div>
 
       {/* Main Split Stage: Patient Live Pass vs Compounder Deck */}
-      <div className="relative grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-emerald-500/15">
+      <div className="relative grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-white/[0.08]">
         {/* Left 7 Cols: Patient Live Token Pass */}
-        <div className="lg:col-span-7 p-6 sm:p-9 flex flex-col justify-between">
+        <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
           <div>
             {/* Pass Header */}
             <div className="flex flex-wrap items-start justify-between gap-4 pb-6 border-b border-white/10">
               <div>
-                <div className="flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-400">
+                <div className="flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-[#93C5FD]">
                   <span>PATIENT LIVE PASS</span>
                   <span>·</span>
                   <span>DR.PAGE/TOKEN/DRP-018</span>
                 </div>
-                <h4 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+                <h4 className="mt-2 text-2xl sm:text-3xl font-medium tracking-tight text-white">
                   Prof. Dr. M. Rahman — Cardiology
                 </h4>
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="mt-1 text-xs text-[#B2BBC5]">
                   Popular Diagnostic Centre, Dhanmondi · Room 402 · Evening Session
                 </p>
               </div>
-              <div className="px-3.5 py-2 rounded-xl bg-emerald-500/10 border border-emerald-400/25 text-right">
-                <span className="block font-bengali text-xs font-medium text-emerald-300">
+              <div className="px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-right">
+                <span className="block font-bengali text-xs font-medium text-white">
                   রোগীর লাইভ টোকেন
-                </span>
-                <span className="block font-mono text-[10px] tracking-wider text-slate-400 uppercase">
-                  ZERO-INSTALL WEB
                 </span>
               </div>
             </div>
 
             {/* Visual Chamber Queue Node Track (S11 -> S18) */}
             <div className="mt-7">
-              <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400 mb-3">
+              <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-[#B2BBC5] mb-3">
                 <span>LIVE CHAMBER SERIAL PROGRESSION</span>
-                <span className="tabular-nums text-emerald-300 font-semibold">
+                <span className="tabular-nums text-white font-medium">
                   {progressPercent}% TO YOUR TURN
                 </span>
               </div>
@@ -112,12 +100,12 @@ export function DrPageSpecimen() {
               {/* Smooth Progress Bar */}
               <div className="w-full h-1.5 rounded-full bg-white/10 mb-4 overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 transition-all duration-300"
+                  className="h-full rounded-full bg-[#3279F9] transition-all duration-300"
                   style={{ width: `${Math.max(8, progressPercent)}%` }}
                 />
               </div>
 
-              <div className="grid grid-cols-8 gap-2">
+              <div className="grid grid-cols-8 gap-1.5 sm:gap-2">
                 {SERIAL_STEPS.map((step) => {
                   const isCompleted = step < state.servingSerial;
                   const isCurrent = step === state.servingSerial;
@@ -126,14 +114,14 @@ export function DrPageSpecimen() {
                   return (
                     <div
                       key={step}
-                      className={`py-2.5 px-1 rounded-xl border text-center font-mono text-[11px] tabular-nums transition-all ${
+                      className={`py-2 px-1 rounded-xl border text-center font-mono text-[11px] tabular-nums transition-all ${
                         isCurrent
-                          ? "bg-emerald-400 text-slate-950 border-emerald-300 font-bold shadow-[0_0_24px_rgba(16,185,129,0.5)] scale-[1.03]"
+                          ? "bg-white text-[#121317] border-white font-bold shadow-md scale-[1.03]"
                           : isCompleted
-                          ? "bg-emerald-950/40 text-emerald-500/60 border-emerald-500/15 line-through"
+                          ? "bg-white/[0.02] text-white/30 border-white/[0.06] line-through"
                           : isPatient
-                          ? "bg-cyan-500/15 text-cyan-300 border-cyan-400/60 font-bold"
-                          : "bg-white/[0.03] text-slate-400 border-white/10"
+                          ? "bg-[#3279F9]/20 text-[#93C5FD] border-[#3279F9]/40 font-bold"
+                          : "bg-white/[0.04] text-[#B2BBC5] border-white/[0.08]"
                       }`}
                     >
                       <span className="block text-[9px] uppercase tracking-wider opacity-80">
@@ -154,47 +142,47 @@ export function DrPageSpecimen() {
 
             {/* Big Tabular Readouts */}
             <div className="mt-7 grid grid-cols-3 gap-3">
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+              <div className="p-4 rounded-2xl bg-[#18191D] border border-white/[0.07]">
+                <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-[#B2BBC5]">
                   NOW SERVING
                 </span>
                 <span
                   data-testid="drpage-serving-serial"
-                  className="mt-2 block text-3xl sm:text-4xl font-bold tracking-tighter tabular-nums text-emerald-400"
+                  className="mt-2 block text-3xl sm:text-4xl font-medium tracking-tighter tabular-nums text-white"
                 >
                   #{state.servingSerial}
                 </span>
-                <span className="mt-1 block font-mono text-[10px] text-slate-400">
+                <span className="mt-1 block font-mono text-[10px] text-[#8B95A5]">
                   IN CHAMBER
                 </span>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-cyan-500/10 border border-cyan-400/30">
-                <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-cyan-300">
+              <div className="p-4 rounded-2xl bg-[#18191D] border border-white/[0.07]">
+                <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-[#93C5FD]">
                   YOUR SERIAL
                 </span>
                 <span
                   data-testid="drpage-patient-serial"
-                  className="mt-2 block text-3xl sm:text-4xl font-bold tracking-tighter tabular-nums text-white"
+                  className="mt-2 block text-3xl sm:text-4xl font-medium tracking-tighter tabular-nums text-[#3279F9]"
                 >
                   #{state.patientSerial}
                 </span>
-                <span className="mt-1 block font-mono text-[10px] text-cyan-300 font-medium">
+                <span className="mt-1 block font-mono text-[10px] text-[#93C5FD]">
                   VERIFIED PASS
                 </span>
               </div>
 
-              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10">
-                <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+              <div className="p-4 rounded-2xl bg-[#18191D] border border-white/[0.07]">
+                <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-[#B2BBC5]">
                   QUEUE AHEAD
                 </span>
                 <span
                   data-testid="drpage-patients-ahead"
-                  className="mt-2 block text-3xl sm:text-4xl font-bold tracking-tighter tabular-nums text-white"
+                  className="mt-2 block text-3xl sm:text-4xl font-medium tracking-tighter tabular-nums text-white"
                 >
                   {state.patientsAhead}
                 </span>
-                <span className="mt-1 block font-mono text-[10px] text-slate-400">
+                <span className="mt-1 block font-mono text-[10px] text-[#8B95A5]">
                   PATIENTS
                 </span>
               </div>
@@ -204,18 +192,18 @@ export function DrPageSpecimen() {
           {/* Dynamic ETA Footer */}
           <div className="mt-7 pt-5 border-t border-white/10 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-[#B2BBC5]">
                 DYNAMIC ESTIMATED TURN (ETA)
               </span>
               <span
                 data-testid="drpage-eta-display"
-                className="mt-1 block text-3xl sm:text-4xl font-bold tracking-tight tabular-nums text-emerald-300"
+                className="mt-1 block text-3xl sm:text-4xl font-medium tracking-tight tabular-nums text-white"
               >
                 {state.etaClockDisplay}
               </span>
             </div>
             <div className="text-right">
-              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
+              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-[#B2BBC5]">
                 ESTIMATED WAIT WINDOW
               </span>
               <span
@@ -229,33 +217,33 @@ export function DrPageSpecimen() {
         </div>
 
         {/* Right 5 Cols: Compounder Control Deck */}
-        <div className="lg:col-span-5 p-6 sm:p-9 bg-[#03090E]/80 flex flex-col justify-between">
+        <div className="lg:col-span-5 p-6 sm:p-8 bg-[#18191D] flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between pb-4 border-b border-white/10">
-              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-400">
+              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#93C5FD]">
                 COMPOUNDER PWA · OPERATOR DECK
               </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 font-mono text-[10px] text-emerald-300">
+              <span className="px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/10 font-mono text-[10px] text-[#E6EAF0]">
                 LIVE SIMULATOR
               </span>
             </div>
 
-            <p className="mt-4 text-xs text-slate-400 leading-relaxed">
+            <p className="mt-4 text-xs text-[#B2BBC5] leading-relaxed">
               Trigger real-time chamber transitions below. Watch the patient
               serial pass and SSE telemetry stream respond instantaneously.
             </p>
 
-            <div className="mt-6 space-y-3">
+            <div className="mt-6 space-y-2.5">
               <button
                 type="button"
                 onClick={() =>
                   setServingSerial((prev) => Math.min(patientSerial, prev + 1))
                 }
                 disabled={state.isServingPatient}
-                className="w-full px-5 py-4 rounded-2xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 font-mono text-xs uppercase tracking-[0.14em] font-bold flex items-center justify-between hover:brightness-110 disabled:opacity-40 transition-all shadow-[0_12px_30px_-10px_rgba(16,185,129,0.55)] cursor-pointer"
+                className="w-full px-5 py-3.5 rounded-full bg-white text-[#121317] font-medium text-xs tracking-wide flex items-center justify-between hover:bg-[#E6EAF0] disabled:opacity-40 transition-all cursor-pointer shadow-sm"
               >
                 <span>Advance Serial</span>
-                <span className="tabular-nums">
+                <span className="font-mono tabular-nums">
                   #{state.servingSerial} → #{Math.min(patientSerial, state.servingSerial + 1)}
                 </span>
               </button>
@@ -265,10 +253,10 @@ export function DrPageSpecimen() {
                 onClick={() =>
                   setDelayMinutes((prev) => (prev === 0 ? 15 : 0))
                 }
-                className={`w-full px-5 py-3.5 rounded-2xl border font-mono text-xs uppercase tracking-[0.14em] flex items-center justify-between transition-all cursor-pointer ${
+                className={`w-full px-5 py-3 rounded-full border font-mono text-xs uppercase tracking-wide flex items-center justify-between transition-all cursor-pointer ${
                   delayMinutes > 0
-                    ? "bg-amber-400 text-slate-950 border-amber-300 font-bold shadow-[0_12px_30px_-10px_rgba(245,158,11,0.5)]"
-                    : "bg-white/[0.03] text-slate-200 border-white/15 hover:border-amber-400/50 hover:text-amber-300"
+                    ? "bg-[#F59E0B] text-[#121317] border-[#F59E0B] font-medium"
+                    : "bg-white/[0.04] text-white border-white/10 hover:bg-white/[0.08]"
                 }`}
               >
                 <span>+15m OT Delay</span>
@@ -283,7 +271,7 @@ export function DrPageSpecimen() {
                   setServingSerial(11);
                   setDelayMinutes(0);
                 }}
-                className="w-full px-5 py-3 rounded-2xl border border-white/10 text-slate-400 font-mono text-[11px] uppercase tracking-[0.14em] hover:text-white hover:border-white/25 transition-colors cursor-pointer"
+                className="w-full px-5 py-2.5 rounded-full border border-white/10 text-[#8B95A5] font-mono text-[11px] uppercase tracking-wide hover:text-white hover:border-white/20 transition-colors cursor-pointer"
               >
                 Reset Chamber State (#11)
               </button>
@@ -292,17 +280,17 @@ export function DrPageSpecimen() {
 
           {/* Live SSE Telemetry Frame */}
           <div className="mt-8 pt-5 border-t border-white/10">
-            <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-slate-400 mb-2.5">
+            <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-[#8B95A5] mb-2.5">
               SPRING MODULITH SSE TELEMETRY STREAM
             </span>
-            <div className="p-4 rounded-2xl bg-[#020609] border border-emerald-500/20 font-mono text-[11px] text-slate-300 space-y-1.5 tabular-nums">
-              <div className="text-emerald-400">
+            <div className="p-4 rounded-2xl bg-[#090A0D] border border-white/[0.08] font-mono text-[11px] text-[#B2BBC5] space-y-1.5 tabular-nums">
+              <div className="text-[#3279F9]">
                 event: chamber.queue.updated
               </div>
               <div>
                 data: {`{"serving": ${state.servingSerial}, "ahead": ${state.patientsAhead}, "delayMin": ${state.delayMinutes}}`}
               </div>
-              <div className="text-cyan-400">
+              <div className="text-[#93C5FD]">
                 eta_target: &quot;{state.etaClockDisplay}&quot; · sms_cost: BDT 0.00
               </div>
             </div>

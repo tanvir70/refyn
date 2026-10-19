@@ -1,7 +1,9 @@
 import React from "react";
 import { BrandLogo } from "@/components/BrandLogo";
+import { HeaderBrand } from "@/components/HeaderBrand";
 import { DhakaClock } from "@/components/DhakaClock";
 import { AntigravityParticles } from "@/components/AntigravityParticles";
+import { TypewriterTagline } from "@/components/TypewriterTagline";
 import { HeroStageSwitcher } from "@/components/HeroStageSwitcher";
 import { DrPageSpecimen } from "@/components/specimens/DrPageSpecimen";
 import { PristhaSpecimen } from "@/components/specimens/PristhaSpecimen";
@@ -52,7 +54,7 @@ const USE_CASES = [
   },
   {
     role: "Enterprise & Trade Dealerships",
-    domain: "Rajib Enterprise POS · Trade Core",
+    domain: "POS · Trade Core",
     headline: "Enforce FEFO batch safety and self-healing credit ledgers.",
     body: "Dispatch split stock across Dokan counters and Godown warehouses while protecting wholesale margins behind a 4-digit Owner PIN.",
     href: "#work-agro-pos",
@@ -117,13 +119,7 @@ export default function HomePage() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[#FFFFFF]/88 border-b border-[#212226]/[0.06] transition-colors">
         <div className="max-w-[1600px] mx-auto px-5 sm:px-12 h-16 flex items-center justify-between gap-4">
           <div className="flex items-center gap-8">
-            <a
-              href="#welcome"
-              className="inline-flex items-center focus:outline-none"
-              aria-label="Refyn Venture Home"
-            >
-              <BrandLogo variant="lockup" theme="light" />
-            </a>
+            <HeaderBrand />
 
             <nav
               aria-label="Studio Navigation"
@@ -214,8 +210,7 @@ export default function HomePage() {
             {/* Main Antigravity Display Headline */}
             <h1 className="text-[2.6rem] sm:text-[4rem] lg:text-[5rem] font-medium tracking-[-0.025em] leading-[1.08] text-balance text-[#121317]">
               <span className="block">
-                Software that moves business forward.
-                <span className="agy-cursor" aria-hidden="true" />
+                <TypewriterTagline />
               </span>
               <span className="block mt-2 text-[1.75rem] sm:text-[2.65rem] lg:text-[3.4rem] text-[#45474D] font-normal">
                 Engineered for high-trust operations
@@ -768,7 +763,7 @@ export default function HomePage() {
                   href="#work-agro-pos"
                   className="text-[#45474D] hover:text-[#121317] transition-colors"
                 >
-                  Rajib Enterprise POS
+                  POS
                 </a>
               </div>
             </div>
