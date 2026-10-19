@@ -10,245 +10,233 @@ import { BRAND_TOKENS, MONOGRAPH_WORKS } from "@/data/monograph";
 const ARCHITECTURAL_PRINCIPLES = [
   {
     index: "01",
+    accent: "from-emerald-400 to-cyan-400",
+    badgeText: "text-emerald-300 border-emerald-500/30 bg-emerald-500/10",
     title: "Domain Invariants Over CRUD",
     body: "Every system is anchored in strict database and state-machine invariants—pessimistic row locking for clinical serials, non-negative CHECK constraints for credit ledgers, and FEFO quarantine gates for regulated inventory.",
   },
   {
     index: "02",
+    accent: "from-amber-400 to-orange-500",
+    badgeText: "text-amber-300 border-amber-500/30 bg-amber-500/10",
     title: "Zero-Friction Edge Surfaces",
     body: "Users in emerging markets should never be forced through heavy app-store installs for urgent tasks. Patient serial passes, reader folios, and counter terminals launch instantaneously with minimal payload overhead.",
   },
   {
     index: "03",
+    accent: "from-sky-400 to-blue-500",
+    badgeText: "text-sky-300 border-sky-500/30 bg-sky-500/10",
     title: "Bilingual Cultural Precision",
     body: "Software built for Bangladesh must treat Bengali (বাংলা) and English as equal first-class citizens—pairing geometric grotesque display typography with optically calibrated Bengali editorial and operational script.",
   },
   {
     index: "04",
+    accent: "from-indigo-400 to-purple-500",
+    badgeText: "text-indigo-300 border-indigo-500/30 bg-indigo-500/10",
     title: "Auditability by Default",
     body: "From double-entry supplier rebates to real-time chamber delay broadcasts, every state transition produces an immutable, human-verifiable audit trail.",
   },
 ] as const;
 
+const MARQUEE_ITEMS = [
+  "VENTURE INCUBATION",
+  "DISTRIBUTED SYSTEMS ARCHITECTURE",
+  "ZERO-DUPLICATE CLINICAL QUEUES",
+  "BILINGUAL LITERARY WORKSPACES",
+  "FEFO CHEMICAL EXPIRY ENGINES",
+  "SELF-HEALING FINANCIAL LEDGERS",
+] as const;
+
 export default function HomePage() {
-  const inHouseWorks = MONOGRAPH_WORKS.filter(
-    (w) => w.track === "IN-HOUSE VENTURE"
-  );
-  const partnerWorks = MONOGRAPH_WORKS.filter(
-    (w) => w.track === "PARTNER ENGINEERED SYSTEM"
-  );
+  const drPageWork = MONOGRAPH_WORKS.find((w) => w.id === "dr-page")!;
+  const pristhaWork = MONOGRAPH_WORKS.find((w) => w.id === "pristha")!;
+  const agroPosWork = MONOGRAPH_WORKS.find((w) => w.id === "agro-pos")!;
 
   return (
-    <div className="min-h-screen bg-[#F7F7F4] text-[#0F172A]">
-      {/* Outer 12-Column Swiss Monograph Frame */}
-      <div className="max-w-[1440px] mx-auto border-x border-[#E5E7EB] grid grid-cols-1 lg:grid-cols-12">
-        {/* Left 3-Column Sticky Architectural Spine */}
-        <aside className="lg:col-span-3 border-b lg:border-b-0 lg:border-r border-[#E5E7EB] bg-[#F7F7F4]">
-          <div className="lg:sticky lg:top-0 lg:h-screen p-6 sm:p-8 flex flex-col justify-between">
-            {/* Top Brand Lockup & Studio Descriptor */}
-            <div>
-              <a
-                href="#thesis"
-                className="inline-block focus:outline-none"
-                aria-label="Refyn Venture Home"
-              >
-                <BrandLogo variant="lockup" theme="light" />
-              </a>
-              <p className="mt-5 text-xs text-[#64748B] leading-relaxed">
-                Venture builder &amp; systems engineering lab originating
-                proprietary software platforms and mission-critical partner
-                infrastructure.
-              </p>
+    <div className="min-h-screen bg-[#060911] text-slate-100 selection:bg-sky-400 selection:text-slate-950">
+      {/* Floating Glassmorphic Studio Header */}
+      <header className="sticky top-0 z-50 backdrop-blur-2xl bg-[#060911]/80 border-b border-white/[0.08]">
+        <div className="max-w-[1380px] mx-auto px-6 sm:px-10 h-20 flex items-center justify-between gap-4">
+          <a
+            href="#thesis"
+            className="inline-block focus:outline-none"
+            aria-label="Refyn Venture Home"
+          >
+            <BrandLogo variant="lockup" theme="dark" />
+          </a>
 
-              <div className="mt-5 pt-4 border-t border-[#E5E7EB] flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748B]">
-                <span>FOUNDER</span>
-                <span className="text-[#0F172A] font-medium">
-                  Tanvir Anjum Refat
-                </span>
-              </div>
-            </div>
+          <nav
+            aria-label="Studio Navigation"
+            className="hidden md:flex items-center gap-1 p-1.5 rounded-full bg-white/[0.04] border border-white/10 font-mono text-xs"
+          >
+            <a
+              href="#thesis"
+              className="px-4 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all"
+            >
+              01 Thesis
+            </a>
+            <a
+              href="#work-dr-page"
+              className="px-4 py-1.5 rounded-full text-slate-300 hover:text-emerald-300 hover:bg-emerald-500/10 transition-all"
+            >
+              02 Ventures
+            </a>
+            <a
+              href="#work-agro-pos"
+              className="px-4 py-1.5 rounded-full text-slate-300 hover:text-blue-300 hover:bg-blue-500/10 transition-all"
+            >
+              03 Partner Systems
+            </a>
+            <a
+              href="#colophon"
+              className="px-4 py-1.5 rounded-full text-slate-300 hover:text-amber-300 hover:bg-amber-500/10 transition-all"
+            >
+              04 Identity
+            </a>
+          </nav>
 
-            {/* Chapter Index Navigation */}
-            <nav aria-label="Monograph Index" className="my-8 lg:my-0">
-              <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748B] mb-3">
-                <span>MONOGRAPH INDEX</span>
-                <span>ED. 2026</span>
-              </div>
-              <ul className="border-t border-[#E5E7EB] divide-y divide-[#E5E7EB] font-mono text-xs">
-                <li>
-                  <a
-                    href="#thesis"
-                    className="py-3 flex items-center justify-between text-[#0F172A] hover:pl-1.5 transition-all"
-                  >
-                    <span>I. Studio Thesis</span>
-                    <span className="text-[#64748B]">01</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#ventures"
-                    className="py-3 flex items-center justify-between text-[#0F172A] hover:pl-1.5 transition-all"
-                  >
-                    <span>II. In-House Ventures</span>
-                    <span className="text-[#64748B]">02</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#systems"
-                    className="py-3 flex items-center justify-between text-[#0F172A] hover:pl-1.5 transition-all"
-                  >
-                    <span>III. Partner Systems</span>
-                    <span className="text-[#64748B]">03</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#colophon"
-                    className="py-3 flex items-center justify-between text-[#0F172A] hover:pl-1.5 transition-all"
-                  >
-                    <span>IV. Identity &amp; Colophon</span>
-                    <span className="text-[#64748B]">04</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-
-            {/* Bottom Live Dhaka Coordinates & Primary Action */}
-            <div className="pt-5 border-t border-[#E5E7EB] space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:block">
               <DhakaClock />
-              <a
-                href="#initiate"
-                className="w-full px-4 py-3.5 bg-[#0F172A] text-[#F7F7F4] font-mono text-xs uppercase tracking-[0.16em] font-medium flex items-center justify-between hover:bg-[#1E293B] transition-colors"
-              >
-                <span>Initiate Dialogue</span>
-                <span aria-hidden="true">→</span>
-              </a>
             </div>
+            <a
+              href="#initiate"
+              className="px-5 py-2.5 rounded-full bg-white text-slate-950 font-mono text-xs uppercase tracking-[0.14em] font-bold hover:bg-sky-200 transition-colors shadow-[0_0_25px_rgba(255,255,255,0.25)]"
+            >
+              Initiate Dialogue →
+            </a>
           </div>
-        </aside>
+        </div>
+      </header>
 
-        {/* Right 9-Column Editorial & Specimen Canvas */}
-        <main className="lg:col-span-9 divide-y divide-[#E5E7EB]">
-          {/* Top Metadata Masthead Strip */}
-          <header className="px-6 sm:px-10 py-4 flex flex-wrap items-center justify-between gap-4 bg-[#F7F7F4] font-mono text-[11px] uppercase tracking-[0.16em] text-[#64748B]">
-            <div className="flex items-center gap-3">
-              <span className="inline-block w-2 h-2 bg-[#0F172A]" />
-              <span className="text-[#0F172A] font-semibold">
-                REFYN VENTURE — MONOGRAPH NO. 01
-              </span>
-            </div>
-            <div className="flex items-center gap-6">
-              <span>DHAKA · BANGLADESH</span>
-              <span className="hidden sm:inline text-[#0F172A]">
-                ARCHITECT: TANVIR ANJUM REFAT
-              </span>
-            </div>
-          </header>
+      <main>
+        {/* CHAPTER I: FULL-VIEWPORT KINETIC STUDIO HERO */}
+        <section
+          id="thesis"
+          className="relative overflow-hidden bg-studio-grid pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-white/[0.08]"
+        >
+          {/* Multi-Layered Atmospheric Stage Spotlights */}
+          <div
+            className="pointer-events-none absolute -top-40 left-1/4 h-[520px] w-[520px] rounded-full bg-sky-500/15 blur-[130px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute top-1/3 right-10 h-[460px] w-[460px] rounded-full bg-emerald-500/12 blur-[130px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute -bottom-32 left-10 h-[420px] w-[420px] rounded-full bg-amber-500/10 blur-[130px]"
+            aria-hidden="true"
+          />
 
-          {/* CHAPTER I: STUDIO THESIS & ARCHITECTURAL BLUEPRINT */}
-          <section id="thesis" className="bg-[#F7F7F4]">
-            <div className="p-6 sm:p-10 lg:p-12 grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
-              {/* Left 7 Cols: Display Headline & Thesis */}
-              <div className="xl:col-span-7 flex flex-col justify-between">
-                <div>
-                  <div className="inline-flex items-center gap-2.5 px-3 py-1 border border-[#E5E7EB] bg-white font-mono text-[10px] uppercase tracking-[0.18em] text-[#64748B]">
-                    <span>I. VENTURE STUDIO &amp; SYSTEMS ARCHITECTURE</span>
-                  </div>
-
-                  <h1 className="mt-6 text-[2.75rem] sm:text-6xl lg:text-[4.25rem] font-semibold tracking-[-0.04em] leading-[0.98] text-[#0F172A]">
-                    Software that moves business forward.
-                  </h1>
-
-                  <p className="mt-6 text-base sm:text-lg text-[#64748B] max-w-[54ch] leading-relaxed">
-                    Refyn Venture is a software venture builder and systems
-                    engineering lab founded by{" "}
-                    <span className="text-[#0F172A] font-medium">
-                      Tanvir Anjum Refat
-                    </span>
-                    . We incubate proprietary vertical platforms and partner
-                    with ambitious operators to replace fragile paper ledgers
-                    with high-integrity software architecture.
-                  </p>
-
-                  <div className="mt-8 flex flex-wrap items-center gap-3">
-                    <a
-                      href="#ventures"
-                      className="px-5 py-3.5 bg-[#0F172A] text-[#F7F7F4] font-mono text-[11px] uppercase tracking-[0.15em] font-semibold hover:bg-[#1E293B] transition-colors"
-                    >
-                      Examine Selected Works (03)
-                    </a>
-                    <a
-                      href="#initiate"
-                      className="px-5 py-3.5 bg-white border border-[#0F172A] text-[#0F172A] font-mono text-[11px] uppercase tracking-[0.15em] font-semibold hover:bg-[#0F172A] hover:text-[#F7F7F4] transition-colors"
-                    >
-                      Commission a System →
-                    </a>
-                  </div>
+          <div className="relative max-w-[1380px] mx-auto px-6 sm:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+              {/* Left 7 Cols: Oversized Kinetic Display Typography */}
+              <div className="lg:col-span-7">
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.05] border border-white/15 font-mono text-[11px] uppercase tracking-[0.18em] text-sky-300">
+                  <span className="h-2 w-2 rounded-full bg-sky-400" />
+                  <span>VENTURE STUDIO &amp; SYSTEMS ARCHITECTURE</span>
                 </div>
 
-                {/* Key Telemetry Metrics Row */}
-                <div className="mt-10 pt-8 border-t border-[#E5E7EB] grid grid-cols-3 gap-4">
-                  <div>
-                    <span className="block text-2xl sm:text-3xl font-semibold tracking-tight tabular-nums text-[#0F172A]">
+                <h1 className="mt-7 text-5xl sm:text-7xl xl:text-[5.25rem] font-bold tracking-[-0.045em] leading-[0.95] text-white">
+                  Software that{" "}
+                  <span className="bg-gradient-to-r from-white via-sky-200 to-emerald-300 bg-clip-text text-transparent">
+                    moves business forward.
+                  </span>
+                </h1>
+
+                <p className="mt-7 text-base sm:text-xl text-slate-300/90 max-w-[56ch] leading-relaxed font-normal">
+                  Refyn Venture is an independent software venture builder and
+                  systems engineering lab founded by{" "}
+                  <span className="text-white font-semibold">
+                    Tanvir Anjum Refat
+                  </span>
+                  . We originate category-defining digital platforms and partner
+                  with ambitious enterprises to replace fragile paper workflows
+                  with high-integrity software architecture.
+                </p>
+
+                <div className="mt-9 flex flex-wrap items-center gap-4">
+                  <a
+                    href="#work-dr-page"
+                    className="px-7 py-4 rounded-2xl bg-gradient-to-r from-white via-slate-100 to-sky-100 text-slate-950 font-mono text-xs uppercase tracking-[0.16em] font-bold hover:brightness-105 transition-all shadow-[0_16px_40px_-10px_rgba(56,189,248,0.45)]"
+                  >
+                    Explore Selected Works (03)
+                  </a>
+                  <a
+                    href="#initiate"
+                    className="px-7 py-4 rounded-2xl bg-white/[0.05] border border-white/20 text-white font-mono text-xs uppercase tracking-[0.16em] font-semibold hover:bg-white/10 hover:border-white/40 transition-all backdrop-blur-md"
+                  >
+                    Commission a System →
+                  </a>
+                </div>
+
+                {/* 3 Glassmorphic Studio Telemetry Cards */}
+                <div className="mt-12 grid grid-cols-3 gap-4">
+                  <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <span className="block text-3xl sm:text-4xl font-bold tracking-tight tabular-nums text-emerald-300">
                       02
                     </span>
-                    <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-[#64748B]">
+                    <span className="mt-1.5 block font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
                       IN-HOUSE VENTURES
                     </span>
                   </div>
-                  <div>
-                    <span className="block text-2xl sm:text-3xl font-semibold tracking-tight tabular-nums text-[#0F172A]">
+                  <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <span className="block text-3xl sm:text-4xl font-bold tracking-tight tabular-nums text-sky-300">
                       0.0%
                     </span>
-                    <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-[#64748B]">
+                    <span className="mt-1.5 block font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
                       DUPLICATE SERIAL RATE
                     </span>
                   </div>
-                  <div>
-                    <span className="block text-2xl sm:text-3xl font-semibold tracking-tight tabular-nums text-[#0F172A]">
+                  <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <span className="block text-3xl sm:text-4xl font-bold tracking-tight tabular-nums text-amber-300">
                       85/85
                     </span>
-                    <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-[#64748B]">
+                    <span className="mt-1.5 block font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400">
                       LEDGER INVARIANT TESTS
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Right 5 Cols: Kinetic Monogram Geometry & System Index */}
-              <div className="xl:col-span-5">
+              {/* Right 5 Cols: 3D Layered R Monogram & Venture Portal */}
+              <div className="lg:col-span-5">
                 <HeroBlueprint />
               </div>
             </div>
 
-            {/* Obsidian Dual-Mandate Architecture Bar */}
-            <div className="bg-[#0F172A] text-[#F7F7F4] grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#64748B]/30">
-              <div className="p-6 sm:p-10">
-                <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-[#94A3B8]">
+            {/* Dual Studio Mandates — Elevated Glassmorphic Cards */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-emerald-500/[0.09] via-white/[0.02] to-transparent border border-emerald-500/25 overflow-hidden">
+                <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-300">
                   <span>MANDATE A</span>
-                  <span>01 / PROPRIETARY VENTURES</span>
+                  <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-[10px]">
+                    01 / PROPRIETARY VENTURES
+                  </span>
                 </div>
-                <h2 className="mt-3 text-xl font-semibold tracking-tight text-[#F7F7F4]">
+                <h2 className="mt-4 text-2xl font-bold tracking-tight text-white">
                   Proprietary Product Incubation
                 </h2>
-                <p className="mt-2 text-sm text-[#94A3B8] leading-relaxed">
-                  We identify structural bottlenecks in emerging markets—from
-                  evening specialist healthcare queues to bilingual literary
-                  publishing—and engineer enduring software ventures from first
-                  principles.
+                <p className="mt-2.5 text-sm text-slate-300/85 leading-relaxed">
+                  We identify high-friction structural gaps in emerging
+                  markets—from evening specialist healthcare queues to bilingual
+                  literary publishing—and engineer enduring software ventures
+                  from first principles.
                 </p>
               </div>
 
-              <div className="p-6 sm:p-10">
-                <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-[#94A3B8]">
+              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-blue-500/[0.09] via-white/[0.02] to-transparent border border-blue-500/25 overflow-hidden">
+                <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-blue-300">
                   <span>MANDATE B</span>
-                  <span>02 / PARTNER SYSTEMS</span>
+                  <span className="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-[10px]">
+                    02 / PARTNER SYSTEMS
+                  </span>
                 </div>
-                <h2 className="mt-3 text-xl font-semibold tracking-tight text-[#F7F7F4]">
+                <h2 className="mt-4 text-2xl font-bold tracking-tight text-white">
                   Bespoke Operational Engineering
                 </h2>
-                <p className="mt-2 text-sm text-[#94A3B8] leading-relaxed">
+                <p className="mt-2.5 text-sm text-slate-300/85 leading-relaxed">
                   We partner selectively with real-world enterprises to
                   architect audit-compliant POS counters, FEFO chemical expiry
                   engines, and self-healing financial ledgers that survive power
@@ -256,249 +244,333 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* CHAPTER II: IN-HOUSE VENTURES (WORKS 01 & 02) */}
-          <section id="ventures" className="divide-y divide-[#E5E7EB]">
-            {/* Section Masthead */}
-            <div className="px-6 sm:px-10 py-8 bg-white flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#64748B]">
-                  II. PORTFOLIO — IN-HOUSE VENTURES
-                </p>
-                <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#0F172A]">
-                  Originated &amp; Engineered by Refyn Venture
-                </h2>
-              </div>
-              <span className="px-3 py-1.5 border border-[#E5E7EB] bg-[#F7F7F4] font-mono text-xs text-[#0F172A] uppercase tracking-[0.14em]">
-                EXHIBITS 01 — 02
+        {/* KINETIC MARQUEE STRIP */}
+        <div
+          className="py-4 bg-[#04070D] border-b border-white/[0.08] overflow-hidden select-none"
+          aria-hidden="true"
+        >
+          <div className="animate-marquee flex items-center gap-10 font-mono text-xs uppercase tracking-[0.22em] text-slate-400">
+            {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
+              <span key={idx} className="inline-flex items-center gap-10">
+                <span className="text-slate-200 font-semibold">{item}</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
               </span>
+            ))}
+          </div>
+        </div>
+
+        {/* WORLD 01: DR.PAGE — BIOLUMINESCENT CLINICAL EMERALD STAGE */}
+        <section
+          id="work-dr-page"
+          className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-[#041218] via-[#05151D] to-[#060911] border-b border-emerald-500/20"
+        >
+          <div
+            className="pointer-events-none absolute top-1/4 -left-32 h-[540px] w-[540px] rounded-full bg-emerald-500/15 blur-[140px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute bottom-10 right-0 h-[460px] w-[460px] rounded-full bg-cyan-500/12 blur-[140px]"
+            aria-hidden="true"
+          />
+
+          <div className="relative max-w-[1380px] mx-auto px-6 sm:px-10 space-y-10">
+            {/* Oversized Kinetic Stage Header */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7">
+                <div className="inline-flex flex-wrap items-center gap-3 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 font-mono text-xs uppercase tracking-[0.16em]">
+                  <span className="text-emerald-300 font-bold">
+                    WORK {drPageWork.index}
+                  </span>
+                  <span className="text-emerald-500">·</span>
+                  <span className="text-emerald-200">{drPageWork.track}</span>
+                  <span className="text-emerald-500">·</span>
+                  <span className="font-bengali text-sm text-emerald-300 font-semibold">
+                    {drPageWork.nativeTitle}
+                  </span>
+                </div>
+
+                <h2 className="mt-5 text-5xl sm:text-7xl font-bold tracking-[-0.04em] text-white leading-[0.96]">
+                  {drPageWork.title}
+                </h2>
+                <p className="mt-3 text-xl sm:text-2xl font-medium bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent tracking-tight">
+                  {drPageWork.subtitle}
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 space-y-4 pt-2">
+                <p className="text-base font-medium text-slate-100 leading-relaxed">
+                  {drPageWork.summary}
+                </p>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  {drPageWork.problemContext}
+                </p>
+                <div className="pt-1">
+                  <a
+                    href={drPageWork.repositoryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-emerald-500/15 border border-emerald-400/40 font-mono text-xs uppercase tracking-[0.14em] font-semibold text-emerald-200 hover:bg-emerald-400 hover:text-slate-950 transition-all"
+                  >
+                    <span>Inspect Repository ({drPageWork.repositoryLabel})</span>
+                    <svg
+                      viewBox="0 0 12 12"
+                      className="w-3.5 h-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      aria-hidden="true"
+                    >
+                      <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            {inHouseWorks.map((work) => (
-              <article
-                key={work.id}
-                id={`work-${work.id}`}
-                className="p-6 sm:p-10 lg:p-12 bg-[#F7F7F4] space-y-8"
-              >
-                {/* Full-Width Editorial Header Band */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                  <div className="lg:col-span-7">
-                    <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.16em]">
-                      <span className="px-2.5 py-1 bg-[#0F172A] text-[#F7F7F4] font-semibold">
-                        WORK {work.index}
-                      </span>
-                      <span className="text-[#64748B]">{work.track}</span>
-                      <span className="text-[#64748B]">·</span>
-                      <span className="font-bengali text-sm text-[#0F172A] font-medium">
-                        {work.nativeTitle}
-                      </span>
-                    </div>
+            {/* 4-Column Emerald Glass Spec Cards */}
+            <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {drPageWork.ledger.map((spec) => (
+                <div
+                  key={spec.label}
+                  className="p-5 rounded-2xl bg-emerald-950/25 border border-emerald-500/20 backdrop-blur-md"
+                >
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-emerald-400">
+                    {spec.label}
+                  </dt>
+                  <dd className="mt-2 text-xs font-medium text-slate-100 leading-relaxed">
+                    {spec.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
 
-                    <h3 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-[-0.035em] text-[#0F172A] leading-[1.05]">
-                      {work.title}
-                    </h3>
-                    <p className="mt-2 text-lg sm:text-xl font-medium text-[#64748B] tracking-tight">
-                      {work.subtitle}
-                    </p>
-                  </div>
+            {/* Interactive Clinical Specimen */}
+            <DrPageSpecimen />
+          </div>
+        </section>
 
-                  <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
-                    <p className="text-sm font-medium text-[#0F172A] leading-relaxed">
-                      {work.summary}
-                    </p>
-                    <p className="text-xs text-[#64748B] leading-relaxed">
-                      {work.problemContext}
-                    </p>
-                    <div>
-                      <a
-                        href={work.repositoryUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-4 py-2.5 bg-white border border-[#0F172A] font-mono text-[11px] uppercase tracking-[0.14em] font-semibold text-[#0F172A] hover:bg-[#0F172A] hover:text-[#F7F7F4] transition-colors"
-                      >
-                        <span>Inspect Repository ({work.repositoryLabel})</span>
-                        <svg
-                          viewBox="0 0 12 12"
-                          className="w-3 h-3"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          aria-hidden="true"
-                        >
-                          <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
+        {/* WORLD 02: PRISTHA — GOLDEN-HOUR WARM AMBER & PARCHMENT STAGE */}
+        <section
+          id="work-pristha"
+          className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-[#160F09] via-[#120C07] to-[#060911] border-b border-amber-500/20"
+        >
+          <div
+            className="pointer-events-none absolute top-1/4 right-0 h-[540px] w-[540px] rounded-full bg-amber-500/15 blur-[140px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute bottom-10 -left-24 h-[460px] w-[460px] rounded-full bg-orange-500/12 blur-[140px]"
+            aria-hidden="true"
+          />
+
+          <div className="relative max-w-[1380px] mx-auto px-6 sm:px-10 space-y-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7">
+                <div className="inline-flex flex-wrap items-center gap-3 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 font-mono text-xs uppercase tracking-[0.16em]">
+                  <span className="text-amber-300 font-bold">
+                    WORK {pristhaWork.index}
+                  </span>
+                  <span className="text-amber-500">·</span>
+                  <span className="text-amber-200">{pristhaWork.track}</span>
+                  <span className="text-amber-500">·</span>
+                  <span className="font-bengali text-sm text-amber-300 font-semibold">
+                    {pristhaWork.nativeTitle}
+                  </span>
                 </div>
 
-                {/* Horizontal 4-Column Architectural Specification Strip */}
-                <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#E5E7EB] divide-y sm:divide-y-0 sm:divide-x divide-[#E5E7EB] bg-white">
-                  {work.ledger.map((spec) => (
-                    <div key={spec.label} className="p-4">
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748B]">
-                        {spec.label}
-                      </dt>
-                      <dd className="mt-1.5 text-xs font-medium text-[#0F172A] leading-snug">
-                        {spec.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-
-                {/* Live Interactive Specimen Stage */}
-                <div>
-                  {work.id === "dr-page" && <DrPageSpecimen />}
-                  {work.id === "pristha" && <PristhaSpecimen />}
-                </div>
-              </article>
-            ))}
-          </section>
-
-          {/* CHAPTER III: PARTNER ENGINEERED SYSTEMS (FULL-BLEED OBSIDIAN STAGE) */}
-          <section
-            id="systems"
-            className="bg-[#0F172A] text-[#F7F7F4] divide-y divide-[#64748B]/30"
-          >
-            {/* Dark Chapter Masthead */}
-            <div className="px-6 sm:px-10 py-8 flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#94A3B8]">
-                  III. SELECTED CLIENT ARCHITECTURE — PARTNER SYSTEMS
-                </p>
-                <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#F7F7F4]">
-                  Production Systems for Real-World Operators
+                <h2 className="mt-5 text-5xl sm:text-7xl font-bold tracking-[-0.04em] text-[#FAF5EC] leading-[0.96]">
+                  {pristhaWork.title}
                 </h2>
+                <p className="mt-3 text-xl sm:text-2xl font-medium bg-gradient-to-r from-amber-300 to-orange-300 bg-clip-text text-transparent tracking-tight">
+                  {pristhaWork.subtitle}
+                </p>
               </div>
-              <span className="px-3 py-1.5 border border-[#64748B]/40 bg-[#0B1120] font-mono text-xs text-[#F7F7F4] uppercase tracking-[0.14em]">
-                EXHIBIT 03 · ENTERPRISE DEPLOYMENT
-              </span>
+
+              <div className="lg:col-span-5 space-y-4 pt-2">
+                <p className="text-base font-medium text-stone-100 leading-relaxed">
+                  {pristhaWork.summary}
+                </p>
+                <p className="text-sm text-stone-400 leading-relaxed">
+                  {pristhaWork.problemContext}
+                </p>
+                <div className="pt-1">
+                  <a
+                    href={pristhaWork.repositoryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-amber-500/15 border border-amber-400/40 font-mono text-xs uppercase tracking-[0.14em] font-semibold text-amber-200 hover:bg-amber-400 hover:text-stone-950 transition-all"
+                  >
+                    <span>
+                      Inspect Repository ({pristhaWork.repositoryLabel})
+                    </span>
+                    <svg
+                      viewBox="0 0 12 12"
+                      className="w-3.5 h-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      aria-hidden="true"
+                    >
+                      <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            {partnerWorks.map((work) => (
-              <article
-                key={work.id}
-                id={`work-${work.id}`}
-                className="p-6 sm:p-10 lg:p-12 space-y-8"
-              >
-                {/* Full-Width Dark Editorial Header Band */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                  <div className="lg:col-span-7">
-                    <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.16em]">
-                      <span className="px-2.5 py-1 bg-[#F7F7F4] text-[#0F172A] font-semibold">
-                        WORK {work.index}
-                      </span>
-                      <span className="text-[#94A3B8]">{work.track}</span>
-                      <span className="text-[#64748B]">·</span>
-                      <span className="font-bengali text-sm text-[#F7F7F4] font-medium">
-                        {work.nativeTitle}
-                      </span>
-                    </div>
+            {/* 4-Column Warm Amber Spec Cards */}
+            <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {pristhaWork.ledger.map((spec) => (
+                <div
+                  key={spec.label}
+                  className="p-5 rounded-2xl bg-amber-950/25 border border-amber-500/20 backdrop-blur-md"
+                >
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-amber-400">
+                    {spec.label}
+                  </dt>
+                  <dd className="mt-2 text-xs font-medium text-stone-100 leading-relaxed">
+                    {spec.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
 
-                    <h3 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-[-0.035em] text-[#F7F7F4] leading-[1.05]">
-                      {work.title}
-                    </h3>
-                    <p className="mt-2 text-lg sm:text-xl font-medium text-[#94A3B8] tracking-tight">
-                      {work.subtitle}
-                    </p>
-                  </div>
+            {/* Interactive Literary Workspace Specimen */}
+            <PristhaSpecimen />
+          </div>
+        </section>
 
-                  <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
-                    <p className="text-sm font-medium text-[#F7F7F4] leading-relaxed">
-                      {work.summary}
-                    </p>
-                    <p className="text-xs text-[#94A3B8] leading-relaxed">
-                      {work.problemContext}
-                    </p>
-                    <div>
-                      <a
-                        href={work.repositoryUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2.5 px-4 py-2.5 bg-[#F7F7F4] text-[#0F172A] font-mono text-[11px] uppercase tracking-[0.14em] font-semibold hover:bg-white transition-colors"
-                      >
-                        <span>Inspect Repository ({work.repositoryLabel})</span>
-                        <svg
-                          viewBox="0 0 12 12"
-                          className="w-3 h-3"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          aria-hidden="true"
-                        >
-                          <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
+        {/* WORLD 03: RAJIB ENTERPRISE POS — ELECTRIC COBALT & INDIGO STAGE */}
+        <section
+          id="work-agro-pos"
+          className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-[#071024] via-[#060C1B] to-[#060911] border-b border-blue-500/20"
+        >
+          <div
+            className="pointer-events-none absolute top-1/3 -left-24 h-[540px] w-[540px] rounded-full bg-blue-500/15 blur-[140px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute bottom-10 right-0 h-[480px] w-[480px] rounded-full bg-indigo-500/15 blur-[140px]"
+            aria-hidden="true"
+          />
+
+          <div className="relative max-w-[1380px] mx-auto px-6 sm:px-10 space-y-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              <div className="lg:col-span-7">
+                <div className="inline-flex flex-wrap items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 font-mono text-xs uppercase tracking-[0.16em]">
+                  <span className="text-blue-300 font-bold">
+                    WORK {agroPosWork.index}
+                  </span>
+                  <span className="text-blue-500">·</span>
+                  <span className="text-blue-200">{agroPosWork.track}</span>
+                  <span className="text-blue-500">·</span>
+                  <span className="font-bengali text-sm text-blue-300 font-semibold">
+                    {agroPosWork.nativeTitle}
+                  </span>
                 </div>
 
-                {/* Horizontal 4-Column Dark Specification Strip */}
-                <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#64748B]/35 divide-y sm:divide-y-0 sm:divide-x divide-[#64748B]/35 bg-[#0B1120]">
-                  {work.ledger.map((spec) => (
-                    <div key={spec.label} className="p-4">
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#94A3B8]">
-                        {spec.label}
-                      </dt>
-                      <dd className="mt-1.5 text-xs font-medium text-[#F7F7F4] leading-snug">
-                        {spec.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
+                <h2 className="mt-5 text-5xl sm:text-7xl font-bold tracking-[-0.04em] text-white leading-[0.96]">
+                  {agroPosWork.title}
+                </h2>
+                <p className="mt-3 text-xl sm:text-2xl font-medium bg-gradient-to-r from-blue-300 via-sky-300 to-indigo-300 bg-clip-text text-transparent tracking-tight">
+                  {agroPosWork.subtitle}
+                </p>
+              </div>
 
-                {/* Live Interactive Agrochemical POS Specimen */}
-                <div>
-                  <AgroPosSpecimen />
+              <div className="lg:col-span-5 space-y-4 pt-2">
+                <p className="text-base font-medium text-slate-100 leading-relaxed">
+                  {agroPosWork.summary}
+                </p>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  {agroPosWork.problemContext}
+                </p>
+                <div className="pt-1">
+                  <a
+                    href={agroPosWork.repositoryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-blue-500/15 border border-blue-400/40 font-mono text-xs uppercase tracking-[0.14em] font-semibold text-blue-200 hover:bg-blue-400 hover:text-slate-950 transition-all"
+                  >
+                    <span>
+                      Inspect Repository ({agroPosWork.repositoryLabel})
+                    </span>
+                    <svg
+                      viewBox="0 0 12 12"
+                      className="w-3.5 h-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      aria-hidden="true"
+                    >
+                      <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" />
+                    </svg>
+                  </a>
                 </div>
-              </article>
-            ))}
-          </section>
+              </div>
+            </div>
 
-          {/* CHAPTER IV: ARCHITECTURAL PRINCIPLES, BRAND IDENTITY PLATE & COLOPHON */}
-          <section id="colophon" className="divide-y divide-[#E5E7EB]">
-            {/* 4 Architectural Principles on Warm Alabaster */}
-            <div className="p-6 sm:p-10 lg:p-12 bg-[#F7F7F4]">
-              <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
+            {/* 4-Column Cobalt Spec Cards */}
+            <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {agroPosWork.ledger.map((spec) => (
+                <div
+                  key={spec.label}
+                  className="p-5 rounded-2xl bg-blue-950/25 border border-blue-500/20 backdrop-blur-md"
+                >
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-blue-400">
+                    {spec.label}
+                  </dt>
+                  <dd className="mt-2 text-xs font-medium text-slate-100 leading-relaxed">
+                    {spec.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            {/* Interactive Agrochemical POS Specimen */}
+            <AgroPosSpecimen />
+          </div>
+        </section>
+
+        {/* CHAPTER IV: ARCHITECTURAL DOCTRINE & BRAND IDENTITY SYSTEM */}
+        <section id="colophon" className="py-20 lg:py-28 bg-studio-grid">
+          <div className="max-w-[1380px] mx-auto px-6 sm:px-10 space-y-24">
+            {/* 4 Architectural Principles */}
+            <div>
+              <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#64748B]">
+                  <span className="font-mono text-xs uppercase tracking-[0.18em] text-sky-400">
                     IV. ARCHITECTURAL PRINCIPLES
-                  </p>
-                  <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#0F172A]">
+                  </span>
+                  <h2 className="mt-2 text-3xl sm:text-5xl font-bold tracking-tight text-white">
                     The Refyn Venture Standard
                   </h2>
                 </div>
-                <span className="font-mono text-xs text-[#64748B] uppercase tracking-[0.14em]">
+                <span className="px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 font-mono text-xs text-slate-300 uppercase tracking-[0.14em]">
                   SYSTEMS DOCTRINE 01 — 04
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 border border-[#E5E7EB] divide-y md:divide-y-0 md:divide-x divide-[#E5E7EB] bg-white">
-                {ARCHITECTURAL_PRINCIPLES.slice(0, 2).map((principle) => (
-                  <div key={principle.index} className="p-6 sm:p-8">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#64748B]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {ARCHITECTURAL_PRINCIPLES.map((principle) => (
+                  <div
+                    key={principle.index}
+                    className="relative p-8 rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden backdrop-blur-xl"
+                  >
+                    <div
+                      className={`absolute top-0 inset-x-0 h-1 bg-gradient-to-r ${principle.accent}`}
+                    />
+                    <span
+                      className={`inline-block px-3 py-1 rounded-full border font-mono text-[10px] uppercase tracking-[0.16em] ${principle.badgeText}`}
+                    >
                       PRINCIPLE {principle.index}
                     </span>
-                    <h3 className="mt-2.5 text-lg font-semibold text-[#0F172A]">
+                    <h3 className="mt-4 text-xl font-bold text-white">
                       {principle.title}
                     </h3>
-                    <p className="mt-2 text-sm text-[#64748B] leading-relaxed">
-                      {principle.body}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 border-x border-b border-[#E5E7EB] divide-y md:divide-y-0 md:divide-x divide-[#E5E7EB] bg-white">
-                {ARCHITECTURAL_PRINCIPLES.slice(2, 4).map((principle) => (
-                  <div key={principle.index} className="p-6 sm:p-8">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#64748B]">
-                      PRINCIPLE {principle.index}
-                    </span>
-                    <h3 className="mt-2.5 text-lg font-semibold text-[#0F172A]">
-                      {principle.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-[#64748B] leading-relaxed">
+                    <p className="mt-2.5 text-sm text-slate-300/85 leading-relaxed">
                       {principle.body}
                     </p>
                   </div>
@@ -506,73 +578,71 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Brand Identity Specimen Sheet (Echoing the Uploaded Brand Board) */}
-            <div className="p-6 sm:p-10 lg:p-12 bg-white space-y-8">
-              <div className="flex flex-wrap items-end justify-between gap-4">
+            {/* Canonical Brand Identity Showcase Board */}
+            <div className="p-8 sm:p-12 rounded-3xl bg-white/[0.03] border border-white/12 space-y-10 backdrop-blur-xl">
+              <div className="flex flex-wrap items-end justify-between gap-6">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#64748B]">
+                  <span className="font-mono text-xs uppercase tracking-[0.18em] text-amber-300">
                     BRAND IDENTITY SYSTEM · CANONICAL SPECIMEN BOARD
-                  </p>
-                  <h2 className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-[#0F172A]">
+                  </span>
+                  <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-white">
                     Refyn Venture Mark, Lockups &amp; Color Tokens
                   </h2>
                 </div>
 
                 {/* Downloadable Vector SVG Assets */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   <a
                     href="/brand/refyn-monogram.svg"
                     download
-                    className="px-3.5 py-2 border border-[#0F172A] font-mono text-[11px] uppercase tracking-[0.14em] text-[#0F172A] hover:bg-[#0F172A] hover:text-[#F7F7F4] transition-colors"
+                    className="px-4 py-2.5 rounded-xl bg-white text-slate-950 font-mono text-xs uppercase tracking-[0.14em] font-bold hover:bg-sky-200 transition-colors"
                   >
                     Download R Monogram SVG
                   </a>
                   <a
                     href="/brand/refyn-lockup-light.svg"
                     download
-                    className="px-3.5 py-2 border border-[#E5E7EB] bg-[#F7F7F4] font-mono text-[11px] uppercase tracking-[0.14em] text-[#0F172A] hover:border-[#0F172A] transition-colors"
+                    className="px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 font-mono text-xs uppercase tracking-[0.14em] text-white hover:bg-white/15 transition-colors"
                   >
                     Download Light Lockup SVG
                   </a>
                   <a
                     href="/brand/refyn-lockup-dark.svg"
                     download
-                    className="px-3.5 py-2 border border-[#E5E7EB] bg-[#F7F7F4] font-mono text-[11px] uppercase tracking-[0.14em] text-[#0F172A] hover:border-[#0F172A] transition-colors"
+                    className="px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 font-mono text-xs uppercase tracking-[0.14em] text-white hover:bg-white/15 transition-colors"
                   >
                     Download Dark Lockup SVG
                   </a>
                 </div>
               </div>
 
-              {/* 3-Panel Identity Board (Dark Lockup | App Icon Tiles | Light Lockup) */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 border border-[#E5E7EB] divide-y lg:divide-y-0 lg:divide-x divide-[#E5E7EB]">
-                {/* Panel 1: Dark Lockup Specimen */}
-                <div className="lg:col-span-5 p-8 bg-[#0F172A] flex flex-col justify-between min-h-[210px]">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#94A3B8]">
+              {/* 3-Panel Identity Board (Obsidian Lockup | Launcher Tiles | Alabaster Lockup) */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div className="lg:col-span-5 p-8 rounded-2xl bg-[#0F172A] border border-white/15 flex flex-col justify-between min-h-[210px] shadow-xl">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-400">
                     PLATE A · OBSIDIAN LOCKUP (#0F172A)
                   </span>
                   <div className="my-4">
                     <BrandLogo variant="lockup" theme="dark" showTagline />
                   </div>
-                  <span className="font-mono text-[10px] text-[#64748B]">
+                  <span className="font-mono text-[10px] text-slate-400">
                     TRACKING: +260 / +420 · REVERSE CONTRAST
                   </span>
                 </div>
 
-                {/* Panel 2: App Icon Launcher Tiles */}
-                <div className="lg:col-span-3 p-8 bg-[#F7F7F4] flex flex-col justify-between items-center min-h-[210px]">
-                  <span className="w-full font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748B]">
+                <div className="lg:col-span-3 p-8 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col justify-between items-center min-h-[210px]">
+                  <span className="w-full font-mono text-[10px] uppercase tracking-[0.16em] text-slate-400">
                     PLATE B · LAUNCHER TILES
                   </span>
                   <div className="my-4 flex items-center gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-[#0F172A] flex items-center justify-center shadow-md">
+                    <div className="w-16 h-16 rounded-2xl bg-[#0F172A] border border-white/20 flex items-center justify-center shadow-lg">
                       <BrandLogo
                         variant="monogram"
                         theme="dark"
                         className="w-9 h-9"
                       />
                     </div>
-                    <div className="w-16 h-16 rounded-2xl bg-white border border-[#E5E7EB] flex items-center justify-center shadow-sm">
+                    <div className="w-16 h-16 rounded-2xl bg-[#F7F7F4] border border-slate-200 flex items-center justify-center shadow-lg">
                       <BrandLogo
                         variant="monogram"
                         theme="light"
@@ -580,13 +650,12 @@ export default function HomePage() {
                       />
                     </div>
                   </div>
-                  <span className="w-full font-mono text-[10px] text-[#64748B]">
+                  <span className="w-full font-mono text-[10px] text-slate-400">
                     ICON GEOMETRY · 1:1 RATIO
                   </span>
                 </div>
 
-                {/* Panel 3: Light Lockup Specimen */}
-                <div className="lg:col-span-4 p-8 bg-white flex flex-col justify-between min-h-[210px]">
+                <div className="lg:col-span-4 p-8 rounded-2xl bg-[#F7F7F4] text-[#0F172A] border border-white/20 flex flex-col justify-between min-h-[210px] shadow-xl">
                   <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748B]">
                     PLATE C · ALABASTER LOCKUP (#F7F7F4)
                   </span>
@@ -600,68 +669,74 @@ export default function HomePage() {
               </div>
 
               {/* 4 Canonical Color Swatches */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 border border-[#E5E7EB] divide-y sm:divide-y-0 divide-x divide-[#E5E7EB]">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {BRAND_TOKENS.map((token) => (
-                  <div key={token.hex} className="p-5 bg-[#F7F7F4]/50">
+                  <div
+                    key={token.hex}
+                    className="p-5 rounded-2xl bg-white/[0.03] border border-white/10"
+                  >
                     <div
-                      className="w-full h-12 border border-[#E5E7EB]"
+                      className="w-full h-14 rounded-xl border border-white/20 shadow-inner"
                       style={{ backgroundColor: token.hex }}
                     />
-                    <div className="mt-3 flex items-baseline justify-between gap-2">
-                      <p className="font-semibold text-sm text-[#0F172A]">
+                    <div className="mt-3.5 flex items-baseline justify-between gap-2">
+                      <p className="font-bold text-sm text-white">
                         {token.name}
                       </p>
-                      <p className="font-mono text-xs text-[#0F172A] font-medium">
+                      <p className="font-mono text-xs text-sky-300 font-semibold">
                         {token.hex}
                       </p>
                     </div>
-                    <p className="mt-1 text-[11px] text-[#64748B]">
-                      {token.role}
-                    </p>
+                    <p className="mt-1 text-xs text-slate-400">{token.role}</p>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+      </main>
 
-            {/* Initiation / Footer Colophon */}
-            <footer
-              id="initiate"
-              className="p-6 sm:p-10 lg:p-12 bg-[#0F172A] text-[#F7F7F4]"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pb-10 border-b border-[#64748B]/30">
-                <div className="lg:col-span-7">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#94A3B8]">
-                    INITIATE DIALOGUE · VENTURE &amp; SYSTEMS COMMISSIONING
-                  </p>
-                  <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-[#F7F7F4]">
-                    Ready to engineer a category-defining platform or replace a
-                    fragile operational ledger?
-                  </h2>
-                </div>
+      {/* MONUMENTAL KINETIC STUDIO FOOTER */}
+      <footer
+        id="initiate"
+        className="relative overflow-hidden border-t border-white/10 bg-[#04060C] py-20"
+      >
+        <div
+          className="pointer-events-none absolute -bottom-32 left-1/2 -translate-x-1/2 h-80 w-[720px] rounded-full bg-sky-500/15 blur-[130px]"
+          aria-hidden="true"
+        />
+        <div className="relative max-w-[1380px] mx-auto px-6 sm:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pb-14 border-b border-white/10">
+            <div className="lg:col-span-8">
+              <span className="font-mono text-xs uppercase tracking-[0.18em] text-emerald-300">
+                INITIATE DIALOGUE · VENTURE &amp; SYSTEMS COMMISSIONING
+              </span>
+              <h2 className="mt-4 text-4xl sm:text-6xl font-bold tracking-[-0.035em] text-white leading-[1.02]">
+                Ready to engineer a category-defining platform?
+              </h2>
+            </div>
 
-                <div className="lg:col-span-5 flex flex-wrap lg:justify-end gap-3">
-                  <a
-                    href="https://github.com/tanvir70"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-4 bg-[#F7F7F4] text-[#0F172A] font-mono text-xs uppercase tracking-[0.16em] font-semibold hover:bg-white transition-colors"
-                  >
-                    GitHub (Tanvir Anjum Refat) →
-                  </a>
-                </div>
-              </div>
+            <div className="lg:col-span-4 flex flex-wrap lg:justify-end">
+              <a
+                href="https://github.com/tanvir70"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-white via-sky-100 to-emerald-200 text-slate-950 font-mono text-xs uppercase tracking-[0.16em] font-bold hover:brightness-105 transition-all shadow-[0_16px_40px_-10px_rgba(56,189,248,0.4)]"
+              >
+                GitHub (Tanvir Anjum Refat) →
+              </a>
+            </div>
+          </div>
 
-              <div className="pt-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] text-[#94A3B8]">
-                <BrandLogo variant="lockup" theme="dark" />
-                <div>
-                  COPYRIGHT 2026 REFYN VENTURE. FOUNDED BY TANVIR ANJUM REFAT.
-                  ALL RIGHTS RESERVED.
-                </div>
-              </div>
-            </footer>
-          </section>
-        </main>
-      </div>
+          <div className="pt-10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-slate-400">
+            <BrandLogo variant="lockup" theme="dark" />
+            <div>
+              COPYRIGHT 2026 REFYN VENTURE. FOUNDED BY TANVIR ANJUM REFAT. ALL
+              RIGHTS RESERVED.
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

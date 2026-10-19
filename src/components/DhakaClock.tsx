@@ -22,11 +22,13 @@ export function DhakaClock() {
   }, []);
 
   return (
-    <div className="font-mono text-[11px] leading-relaxed text-[#64748B] tabular-nums">
-      <div className="text-[#111318] font-medium tracking-wider uppercase">
-        DAC · 23.8103° N, 90.4125° E
-      </div>
-      <div className="mt-0.5">{timeStr} · UTC+06:00</div>
+    <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 font-mono text-[11px] text-slate-300 tabular-nums">
+      <span className="relative flex h-2 w-2">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+      </span>
+      <span className="text-slate-400 hidden xl:inline">DAC 23.81°N</span>
+      <span className="text-white font-medium">{timeStr}</span>
     </div>
   );
 }

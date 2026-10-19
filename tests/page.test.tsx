@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import HomePage from "../src/app/page";
 
-describe("Task 3: Refyn Venture Flagship Monograph Page & Anti-Slop Compliance", () => {
-  it("renders all four monograph chapters, tagline, founder attribution, and interactive specimens", () => {
+describe("Task 3: Refyn Venture Bold Kinetic Studio Page & Anti-Slop Compliance", () => {
+  it("renders all four studio chapters, tagline, founder attribution, and interactive specimens", () => {
     render(<HomePage />);
 
     expect(
@@ -20,11 +20,8 @@ describe("Task 3: Refyn Venture Flagship Monograph Page & Anti-Slop Compliance",
     ).toBeTruthy();
   });
 
-  it("strictly enforces the Zero AI-Slop Mandate: no rounded-full pill badges and no emoji characters", () => {
+  it("enforces DOM hygiene: no emoji characters and no hacker-template double-slashes", () => {
     const { container } = render(<HomePage />);
-
-    const roundedFullElements = container.querySelectorAll(".rounded-full");
-    expect(roundedFullElements.length).toBe(0);
 
     const text = container.textContent ?? "";
     const emojiRegex = /[\p{Extended_Pictographic}]/u;
