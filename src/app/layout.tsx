@@ -17,15 +17,19 @@ export default function RootLayout({
       <head>
         <link
           rel="preconnect"
-          href="https://api.fontshare.com"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
         <link
           rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Bengali:wght@400;500;600&display=swap"
         />
       </head>
-      <body className="min-h-screen bg-[#F7F7F4] text-[#111318] selection:bg-[#0F172A] selection:text-[#F7F7F4]">
+      <body className="min-h-screen bg-[#FFFFFF] text-[#121317] antialiased selection:bg-[#121317] selection:text-[#FFFFFF]">
         {children}
       </body>
     </html>

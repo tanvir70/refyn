@@ -22,13 +22,13 @@ export function DhakaClock() {
   }, []);
 
   return (
-    <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 font-mono text-[11px] text-slate-300 tabular-nums">
-      <span className="relative flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F8F9FC] border border-[#212226]/[0.08] font-mono text-[11px] text-[#45474D] tabular-nums">
+      <span className="relative flex h-1.5 w-1.5">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3279F9] opacity-75" />
+        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#3279F9]" />
       </span>
-      <span className="text-slate-400 hidden xl:inline">DAC 23.81°N</span>
-      <span className="text-white font-medium">{timeStr}</span>
+      <span className="text-[#45474D] hidden xl:inline">DAC</span>
+      <span className="text-[#121317] font-medium">{timeStr}</span>
     </div>
   );
 }
