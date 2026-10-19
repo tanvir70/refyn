@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import HomePage from "../src/app/page";
 
 describe("Task 3: Refyn Venture Bold Kinetic Studio Page & Anti-Slop Compliance", () => {
-  it("renders all four studio chapters, tagline, founder attribution, and interactive specimens", () => {
+  it("renders all studio chapters, tagline, founder attribution, and interactive specimens", () => {
     render(<HomePage />);
 
     expect(
@@ -29,17 +29,13 @@ describe("Task 3: Refyn Venture Bold Kinetic Studio Page & Anti-Slop Compliance"
     expect(text.includes("//")).toBe(false);
   });
 
-  it("renders downloadable SVG brand asset links and color token swatches in the Colophon", () => {
+  it("renders the four Architectural Principles and clean studio footer without internal brand swatch clutter", () => {
     render(<HomePage />);
 
-    expect(screen.getByText("#0F172A")).toBeTruthy();
-    expect(screen.getByText("#64748B")).toBeTruthy();
-    expect(screen.getByText("#E5E7EB")).toBeTruthy();
-    expect(screen.getByText("#F7F7F4")).toBeTruthy();
-
-    const monogramLink = screen.getByRole("link", {
-      name: /Download R Monogram SVG/i,
-    });
-    expect(monogramLink.getAttribute("href")).toBe("/brand/refyn-monogram.svg");
+    expect(screen.getByText(/Domain Invariants Over CRUD/i)).toBeTruthy();
+    expect(screen.getByText(/Zero-Friction Edge Surfaces/i)).toBeTruthy();
+    expect(screen.getByText(/Bilingual Cultural Precision/i)).toBeTruthy();
+    expect(screen.getByText(/Auditability by Default/i)).toBeTruthy();
+    expect(screen.queryByText(/CANONICAL SPECIMEN BOARD/i)).toBeNull();
   });
 });

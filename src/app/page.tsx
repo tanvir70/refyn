@@ -5,7 +5,7 @@ import { HeroBlueprint } from "@/components/HeroBlueprint";
 import { DrPageSpecimen } from "@/components/specimens/DrPageSpecimen";
 import { PristhaSpecimen } from "@/components/specimens/PristhaSpecimen";
 import { AgroPosSpecimen } from "@/components/specimens/AgroPosSpecimen";
-import { BRAND_TOKENS, MONOGRAPH_WORKS } from "@/data/monograph";
+import { MONOGRAPH_WORKS } from "@/data/monograph";
 
 const ARCHITECTURAL_PRINCIPLES = [
   {
@@ -91,7 +91,7 @@ export default function HomePage() {
               href="#colophon"
               className="px-4 py-1.5 rounded-full text-slate-300 hover:text-amber-300 hover:bg-amber-500/10 transition-all"
             >
-              04 Identity
+              04 Principles
             </a>
           </nav>
 
@@ -573,121 +573,6 @@ export default function HomePage() {
                     <p className="mt-2.5 text-sm text-slate-300/85 leading-relaxed">
                       {principle.body}
                     </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Canonical Brand Identity Showcase Board */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-white/[0.03] border border-white/12 space-y-10 backdrop-blur-xl">
-              <div className="flex flex-wrap items-end justify-between gap-6">
-                <div>
-                  <span className="font-mono text-xs uppercase tracking-[0.18em] text-amber-300">
-                    BRAND IDENTITY SYSTEM · CANONICAL SPECIMEN BOARD
-                  </span>
-                  <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                    Refyn Venture Mark, Lockups &amp; Color Tokens
-                  </h2>
-                </div>
-
-                {/* Downloadable Vector SVG Assets */}
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="/brand/refyn-monogram.svg"
-                    download
-                    className="px-4 py-2.5 rounded-xl bg-white text-slate-950 font-mono text-xs uppercase tracking-[0.14em] font-bold hover:bg-sky-200 transition-colors"
-                  >
-                    Download R Monogram SVG
-                  </a>
-                  <a
-                    href="/brand/refyn-lockup-light.svg"
-                    download
-                    className="px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 font-mono text-xs uppercase tracking-[0.14em] text-white hover:bg-white/15 transition-colors"
-                  >
-                    Download Light Lockup SVG
-                  </a>
-                  <a
-                    href="/brand/refyn-lockup-dark.svg"
-                    download
-                    className="px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/15 font-mono text-xs uppercase tracking-[0.14em] text-white hover:bg-white/15 transition-colors"
-                  >
-                    Download Dark Lockup SVG
-                  </a>
-                </div>
-              </div>
-
-              {/* 3-Panel Identity Board (Obsidian Lockup | Launcher Tiles | Alabaster Lockup) */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <div className="lg:col-span-5 p-8 rounded-2xl bg-[#0F172A] border border-white/15 flex flex-col justify-between min-h-[210px] shadow-xl">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-400">
-                    PLATE A · OBSIDIAN LOCKUP (#0F172A)
-                  </span>
-                  <div className="my-4">
-                    <BrandLogo variant="lockup" theme="dark" showTagline />
-                  </div>
-                  <span className="font-mono text-[10px] text-slate-400">
-                    TRACKING: +260 / +420 · REVERSE CONTRAST
-                  </span>
-                </div>
-
-                <div className="lg:col-span-3 p-8 rounded-2xl bg-white/[0.04] border border-white/10 flex flex-col justify-between items-center min-h-[210px]">
-                  <span className="w-full font-mono text-[10px] uppercase tracking-[0.16em] text-slate-400">
-                    PLATE B · LAUNCHER TILES
-                  </span>
-                  <div className="my-4 flex items-center gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-[#0F172A] border border-white/20 flex items-center justify-center shadow-lg">
-                      <BrandLogo
-                        variant="monogram"
-                        theme="dark"
-                        className="w-9 h-9"
-                      />
-                    </div>
-                    <div className="w-16 h-16 rounded-2xl bg-[#F7F7F4] border border-slate-200 flex items-center justify-center shadow-lg">
-                      <BrandLogo
-                        variant="monogram"
-                        theme="light"
-                        className="w-9 h-9"
-                      />
-                    </div>
-                  </div>
-                  <span className="w-full font-mono text-[10px] text-slate-400">
-                    ICON GEOMETRY · 1:1 RATIO
-                  </span>
-                </div>
-
-                <div className="lg:col-span-4 p-8 rounded-2xl bg-[#F7F7F4] text-[#0F172A] border border-white/20 flex flex-col justify-between min-h-[210px] shadow-xl">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#64748B]">
-                    PLATE C · ALABASTER LOCKUP (#F7F7F4)
-                  </span>
-                  <div className="my-4">
-                    <BrandLogo variant="lockup" theme="light" showTagline />
-                  </div>
-                  <span className="font-mono text-[10px] text-[#64748B]">
-                    PRIMARY DAYLIGHT SIGNATURE
-                  </span>
-                </div>
-              </div>
-
-              {/* 4 Canonical Color Swatches */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {BRAND_TOKENS.map((token) => (
-                  <div
-                    key={token.hex}
-                    className="p-5 rounded-2xl bg-white/[0.03] border border-white/10"
-                  >
-                    <div
-                      className="w-full h-14 rounded-xl border border-white/20 shadow-inner"
-                      style={{ backgroundColor: token.hex }}
-                    />
-                    <div className="mt-3.5 flex items-baseline justify-between gap-2">
-                      <p className="font-bold text-sm text-white">
-                        {token.name}
-                      </p>
-                      <p className="font-mono text-xs text-sky-300 font-semibold">
-                        {token.hex}
-                      </p>
-                    </div>
-                    <p className="mt-1 text-xs text-slate-400">{token.role}</p>
                   </div>
                 ))}
               </div>
